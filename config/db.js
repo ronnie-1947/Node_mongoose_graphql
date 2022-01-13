@@ -1,6 +1,13 @@
-import mongoose from 'mongoose'
+import mongoose from "mongoose"
 
-const connectDB = async () =>{
+const connectDB = async (MONGODB_URI) => {
 
-  const conn = await mongoose.connect()
+  const conn = await mongoose.connect(MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+
+  console.log(`Mongodb connected: ${conn.connection.host}`)
 }
+
+export default connectDB
