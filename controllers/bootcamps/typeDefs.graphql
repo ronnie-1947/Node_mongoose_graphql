@@ -1,0 +1,7 @@
+type Bootcamp {
+  name: String!
+}
+
+extend type Query {
+  bootcamps: Bootcamp!
+}
