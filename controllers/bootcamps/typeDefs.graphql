@@ -1,7 +1,48 @@
 type Bootcamp {
+  _id: ID!
   name: String!
+  slug: String
+  description: String!
+  website: String
+  phone: String
+  email: String
+  address: String
+  latitude: Float
+  longitude: Float
+  formattedAddress: String
+  street: String
+  city: String
+  state: String
+  zipcode: String
+  country: String
+  careers: String
+  averageRating: Int,
+  averageCost: Int
+  photo: String,
+  housing: Boolean,
+  jobAssistance: Boolean,
+  jobGurantee: Boolean
+  acceptGi: Boolean
 }
 
 extend type Query {
-  bootcamps: Bootcamp!
+  bootcamps: [Bootcamp]!
+}
+
+extend type Mutation {
+
+  addBootcamp (
+    name: String!
+    description: String!
+    website: String
+    phone: String
+    email: String
+    address: String
+    formattedAddress: String
+    careers: String
+    housing: Boolean,
+    jobAssistance: Boolean,
+    jobGurantee: Boolean
+    acceptGi: Boolean
+  ): Bootcamp
 }

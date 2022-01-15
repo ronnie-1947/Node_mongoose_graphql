@@ -1,6 +1,6 @@
 import express from "express"
 import dotenv from "dotenv"
-import { ApolloServer } from "apollo-server-express"
+import ApolloServer  from "apollo-server-express"
 import cookieParser from "cookie-parser"
 import path from "path"
 
@@ -16,7 +16,7 @@ connectDB(MONGO_URI)
 
 const app = express()
 
-const graphqlServer = new ApolloServer({
+const graphqlServer = new ApolloServer.ApolloServer({
   typeDefs,
   resolvers,
   context: ({ req, res }) => {

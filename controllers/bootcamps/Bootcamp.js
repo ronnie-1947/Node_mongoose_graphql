@@ -1,6 +1,13 @@
-export const bootcamps = ()=>{
+import BootCamp from "../../models/Bootcamp.js"
 
-  return {
-    name: 'hello'
-  }
+export const bootcamps = async () => {
+  const bootcamps = await BootCamp.find().limit(2).sort({createdAt: 'desc'})
+
+  return bootcamps
+}
+
+export const addBootcamp = async (args) => {
+  const bootcamp = await BootCamp.create(args)
+
+  return bootcamp
 }

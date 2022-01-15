@@ -1,6 +1,6 @@
-import { Schema, model } from "mongoose"
+import mongoose from "mongoose"
 
-const BootcampSchema = new Schema({
+const BootcampSchema = new mongoose.Schema({
   name: {
     type: String,
     required: [true, "Please add a name"],
@@ -88,4 +88,4 @@ const BootcampSchema = new Schema({
   }
 })
 
-export default model("Bootcamp", BootcampSchema)
+export default mongoose.model("Bootcamp", BootcampSchema)
