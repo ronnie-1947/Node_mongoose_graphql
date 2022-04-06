@@ -14,7 +14,7 @@ const { PORT, MONGO_URI } = process.env
 // Connect to database
 connectDB(MONGO_URI)
 
-const app = express()
+const app = express() as express.Application
 
 const graphqlServer = new ApolloServer.ApolloServer({
   typeDefs,
@@ -47,7 +47,7 @@ const server = app.listen(PORT || 5000, () => {
 })
 
 // Handle unhandled promise rejections
-process.on("unhandledRejection", (err, promise) => {
+process.on("unhandledRejection", (err: Error) => {
   console.error(`Error: ${err.message}`)
   server.close(() => process.exit(1))
 })
