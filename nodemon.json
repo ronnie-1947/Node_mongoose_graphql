@@ -1,0 +1,8 @@
+{
+  "restartable": "rs",
+  "ignore": [".git", "node_modules/", "build/", "coverage/"],
+  "execMap": {
+    "ts": "node --loader ts-node/esm server.ts --no-warnings"
+  },
+  "ext": "js,json,ts"
+}

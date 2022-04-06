@@ -5,7 +5,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only --rs --clear server.ts",
+    "dev": "nodemon --config nodemon.json server.ts",
     "build": "tsc"
   },
   "dependencies": {
@@ -20,6 +20,6 @@
   "devDependencies": {
     "@types/cookie-parser": "^1.4.2",
     "nodemon": "^2.0.15",
-    "ts-node-dev": "^1.1.8"
+    "ts-node": "^10.7.0"
   }
 }
